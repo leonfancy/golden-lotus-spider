@@ -62,9 +62,17 @@ NEWSPIDER_MODULE = 'golden_lotus.spiders'
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'golden_lotus.pipelines.GoldenLotusPipeline': 300,
-#}
+ITEM_PIPELINES = {
+    'golden_lotus.pipelines.GoldenLotusPipeline': 1,
+    'scrapy.pipelines.files.FilesPipeline': 2,
+}
+FILES_STORE = './out/audios'
+
+FEEDS = {
+    './out/books.csv': {
+        'format': 'csv',
+    },
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html

@@ -6,8 +6,12 @@
 
 # useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
+import unicodedata
 
 
 class GoldenLotusPipeline:
     def process_item(self, item, spider):
+        adapter = ItemAdapter(item)
+        adapter['title'] = unicodedata.normalize("NFKD", adapter.get('title'))
+        adapter['filename'] = unicodedata.normalize("NFKD", adapter.get('filename'))
         return item
