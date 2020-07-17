@@ -7,7 +7,7 @@ def _is_main_content(text):
 
 
 def _is_comment_content(text):
-    return re.match(r'第\d+', text) or re.match(r'金瓶\d+集', text)
+    return re.match(r'评点', text) or re.match(r'（35）透过', text)
 
 
 def _is_original_content(text):

@@ -14,7 +14,7 @@ NEWSPIDER_MODULE = 'golden_lotus.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'golden_lotus (+http://www.yourdomain.com)'
+USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36'
 
 # Obey robots.txt rules
 # ROBOTSTXT_OBEY = True
@@ -25,7 +25,7 @@ NEWSPIDER_MODULE = 'golden_lotus.spiders'
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-#DOWNLOAD_DELAY = 3
+DOWNLOAD_DELAY = 1
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16
@@ -69,7 +69,7 @@ ITEM_PIPELINES = {
 FILES_STORE = './out/audios'
 
 FEEDS = {
-    './out/books.csv': {
+    './out/books%(time)s.csv': {
         'format': 'csv',
     },
 }
@@ -94,3 +94,5 @@ FEEDS = {
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+LOG_FILE = './out/log/spider.log'
