@@ -6,7 +6,7 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-scrapy = "2.2.0"
+scrapy = "2.6.2"
 
 [requires]
 python_version = "3.8"
